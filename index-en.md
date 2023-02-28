@@ -1,0 +1,356 @@
+![biopython_logo](images/biopython_logo.svg)
+
+# Biopython Tutorial and Cookbook
+
+**Jeff Chang, Brad Chapman, Iddo Friedberg, Thomas Hamelryck,  Michiel de Hoon, Peter Cock, Tiago Antao, Eric Talevich, Bartek Wilczyński**
+
+**Last Update – February ‍12, 2023 (Biopython 1.81)**
+
+## Contents
+
+- Chapter ‍1 Introduction
+  - [1.1 What is Biopython?](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec3)
+  - [1.2 What can I find in the Biopython package](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec4)
+  - [1.3 Installing Biopython](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec5)
+  - [1.4 Frequently Asked Questions (FAQ)](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec6)
+- Chapter ‍2 Quick Start – What can you do with Biopython?
+  - [2.1 General overview of what Biopython provides](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec8)
+  - [2.2 Working with sequences](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec9)
+  - [2.3 A usage example](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec10)
+  - 2.4 Parsing sequence file formats
+    - [2.4.1 Simple FASTA parsing example](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec12)
+    - [2.4.2 Simple GenBank parsing example](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec13)
+    - [2.4.3 I love parsing – please don’t stop talking about it!](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec14)
+  - [2.5 Connecting with biological databases](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec15)
+  - [2.6 What to do next](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec16)
+- Chapter ‍3 Sequence objects
+  - [3.1 Sequences act like strings](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec18)
+  - [3.2 Slicing a sequence](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec19)
+  - [3.3 Turning Seq objects into strings](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec20)
+  - [3.4 Concatenating or adding sequences](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec21)
+  - [3.5 Changing case](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec22)
+  - [3.6 Nucleotide sequences and (reverse) complements](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec23)
+  - [3.7 Transcription](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec24)
+  - [3.8 Translation](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec25)
+  - [3.9 Translation Tables](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec26)
+  - [3.10 Comparing Seq objects](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec27)
+  - [3.11 Sequences with unknown sequence contents](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec28)
+  - [3.12 Sequences with partially defined sequence contents](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec29)
+  - [3.13 MutableSeq objects](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec30)
+  - [3.14 Working with strings directly](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec31)
+- Chapter ‍4 Sequence annotation objects
+  - [4.1 The SeqRecord object](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec33)
+  - 4.2 Creating a SeqRecord
+    - [4.2.1 SeqRecord objects from scratch](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec35)
+    - [4.2.2 SeqRecord objects from FASTA files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec36)
+    - [4.2.3 SeqRecord objects from GenBank files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec37)
+  - 4.3 Feature, location and position objects
+    - [4.3.1 SeqFeature objects](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec39)
+    - [4.3.2 Positions and locations](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec40)
+    - [4.3.3 Sequence described by a feature or location](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec45)
+  - [4.4 Comparison](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec46)
+  - [4.5 References](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec47)
+  - [4.6 The format method](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec48)
+  - [4.7 Slicing a SeqRecord](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec49)
+  - [4.8 Adding SeqRecord objects](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec50)
+  - [4.9 Reverse-complementing SeqRecord objects](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec51)
+- Chapter ‍5 Sequence Input/Output
+  - 5.1 Parsing or Reading Sequences
+    - [5.1.1 Reading Sequence Files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec54)
+    - [5.1.2 Iterating over the records in a sequence file](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec55)
+    - [5.1.3 Getting a list of the records in a sequence file](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec56)
+    - [5.1.4 Extracting data](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec57)
+    - [5.1.5 Modifying data](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec58)
+  - [5.2 Parsing sequences from compressed files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec59)
+  - 5.3 Parsing sequences from the net
+    - [5.3.1 Parsing GenBank records from the net](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec61)
+    - [5.3.2 Parsing SwissProt sequences from the net](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec62)
+  - 5.4 Sequence files as Dictionaries
+    - [5.4.1 Sequence files as Dictionaries – In memory](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec64)
+    - [5.4.2 Sequence files as Dictionaries – Indexed files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec67)
+    - [5.4.3 Sequence files as Dictionaries – Database indexed files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec70)
+    - [5.4.4 Indexing compressed files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec72)
+    - [5.4.5 Discussion](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec73)
+  - 5.5 Writing Sequence Files
+    - [5.5.1 Round trips](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec75)
+    - [5.5.2 Converting between sequence file formats](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec76)
+    - [5.5.3 Converting a file of sequences to their reverse complements](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec77)
+    - [5.5.4 Getting your SeqRecord objects as formatted strings](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec78)
+  - [5.6 Low level FASTA and FASTQ parsers](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec79)
+- Chapter ‍6 Multiple Sequence Alignment objects
+  - 6.1 Parsing or Reading Sequence Alignments
+    - [6.1.1 Single Alignments](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec82)
+    - [6.1.2 Multiple Alignments](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec83)
+    - [6.1.3 Ambiguous Alignments](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec84)
+  - 6.2 Writing Alignments
+    - [6.2.1 Converting between sequence alignment file formats](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec86)
+    - [6.2.2 Getting your alignment objects as formatted strings](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec87)
+  - 6.3 Manipulating Alignments
+    - [6.3.1 Slicing alignments](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec89)
+    - [6.3.2 Alignments as arrays](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec90)
+  - 6.4 Getting information on the alignment
+    - [6.4.1 Substitutions](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec92)
+  - 6.5 Alignment Tools
+    - [6.5.1 ClustalW](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec94)
+    - [6.5.2 MUSCLE](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec95)
+    - [6.5.3 MUSCLE using stdout](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec96)
+    - [6.5.4 MUSCLE using stdin and stdout](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec97)
+    - [6.5.5 EMBOSS needle and water](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec98)
+  - 6.6 Pairwise sequence alignment
+    - [6.6.1 Basic usage](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec100)
+    - [6.6.2 The pairwise aligner object](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec101)
+    - [6.6.3 Substitution scores](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec102)
+    - [6.6.4 Affine gap scores](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec103)
+    - [6.6.5 General gap scores](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec104)
+    - [6.6.6 Using a pre-defined substitution matrix and gap scores](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec105)
+    - [6.6.7 Iterating over alignments](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec106)
+    - [6.6.8 Alignment objects](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec107)
+    - [6.6.9 Aligning to the reverse strand](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec110)
+    - [6.6.10 Examples](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec111)
+    - [6.6.11 Generalized pairwise alignments](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec112)
+  - 6.7 Substitution matrices
+    - [6.7.1 Creating an Array object](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec118)
+    - [6.7.2 Calculating a substitution matrix from a pairwise sequence alignment](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec119)
+    - [6.7.3 Reading Array objects from file](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec120)
+    - [6.7.4 Loading predefined substitution matrices](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec121)
+  - [6.8 Pairwise alignments using pairwise2](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec122)
+- Chapter ‍7 BLAST
+  - [7.1 Running BLAST over the Internet](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec124)
+  - 7.2 Running BLAST locally
+    - [7.2.1 Introduction](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec126)
+    - [7.2.2 Standalone NCBI BLAST+](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec127)
+    - [7.2.3 Other versions of BLAST](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec128)
+  - [7.3 Parsing BLAST output](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec129)
+  - [7.4 The BLAST record class](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec130)
+  - [7.5 Dealing with PSI-BLAST](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec131)
+  - [7.6 Dealing with RPS-BLAST](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec132)
+- Chapter ‍8 BLAST and other sequence search tools
+  - 8.1 The SearchIO object model
+    - [8.1.1 QueryResult](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec135)
+    - [8.1.2 Hit](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec136)
+    - [8.1.3 HSP](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec137)
+    - [8.1.4 HSPFragment](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec138)
+  - [8.2 A note about standards and conventions](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec139)
+  - [8.3 Reading search output files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec140)
+  - [8.4 Dealing with large search output files with indexing](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec141)
+  - [8.5 Writing and converting search output files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec142)
+- Chapter ‍9 Accessing NCBI’s Entrez databases
+  - [9.1 Entrez Guidelines](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec144)
+  - [9.2 EInfo: Obtaining information about the Entrez databases](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec145)
+  - [9.3 ESearch: Searching the Entrez databases](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec146)
+  - [9.4 EPost: Uploading a list of identifiers](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec147)
+  - [9.5 ESummary: Retrieving summaries from primary IDs](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec148)
+  - [9.6 EFetch: Downloading full records from Entrez](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec149)
+  - [9.7 ELink: Searching for related items in NCBI Entrez](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec150)
+  - [9.8 EGQuery: Global Query - counts for search terms](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec151)
+  - [9.9 ESpell: Obtaining spelling suggestions](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec152)
+  - [9.10 Parsing huge Entrez XML files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec153)
+  - [9.11 HTML escape characters](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec154)
+  - [9.12 Handling errors](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec155)
+  - 9.13 Specialized parsers
+    - [9.13.1 Parsing Medline records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec161)
+    - [9.13.2 Parsing GEO records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec162)
+    - [9.13.3 Parsing UniGene records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec163)
+  - [9.14 Using a proxy](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec164)
+  - 9.15 Examples
+    - [9.15.1 PubMed and Medline](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec166)
+    - [9.15.2 Searching, downloading, and parsing Entrez Nucleotide records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec167)
+    - [9.15.3 Searching, downloading, and parsing GenBank records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec168)
+    - [9.15.4 Finding the lineage of an organism](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec169)
+  - 9.16 Using the history and WebEnv
+    - [9.16.1 Searching for and downloading sequences using the history](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec171)
+    - [9.16.2 Searching for and downloading abstracts using the history](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec172)
+    - [9.16.3 Searching for citations](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec173)
+- Chapter ‍10 Swiss-Prot and ExPASy
+  - 10.1 Parsing Swiss-Prot files
+    - [10.1.1 Parsing Swiss-Prot records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec176)
+    - [10.1.2 Parsing the Swiss-Prot keyword and category list](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec177)
+  - [10.2 Parsing Prosite records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec178)
+  - [10.3 Parsing Prosite documentation records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec179)
+  - [10.4 Parsing Enzyme records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec180)
+  - 10.5 Accessing the ExPASy server
+    - [10.5.1 Retrieving a Swiss-Prot record](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec182)
+    - [10.5.2 Searching Swiss-Prot](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec183)
+    - [10.5.3 Retrieving Prosite and Prosite documentation records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec184)
+  - [10.6 Scanning the Prosite database](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec185)
+- Chapter ‍11 Going 3D: The PDB module
+  - 11.1 Reading and writing crystal structure files
+    - [11.1.1 Reading an mmCIF file](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec188)
+    - [11.1.2 Reading files in the MMTF format](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec189)
+    - [11.1.3 Reading a PDB file](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec190)
+    - [11.1.4 Reading a PQR file](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec191)
+    - [11.1.5 Reading files in the PDB XML format](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec192)
+    - [11.1.6 Writing mmCIF files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec193)
+    - [11.1.7 Writing PDB files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec194)
+    - [11.1.8 Writing PQR files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec195)
+    - [11.1.9 Writing MMTF files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec196)
+  - 11.2 Structure representation
+    - [11.2.1 Structure](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec198)
+    - [11.2.2 Model](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec199)
+    - [11.2.3 Chain](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec200)
+    - [11.2.4 Residue](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec201)
+    - [11.2.5 Atom](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec202)
+    - [11.2.6 Extracting a specific Atom/­Residue/­Chain/­Model from a Structure](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec203)
+  - 11.3 Disorder
+    - [11.3.1 General approach](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec205)
+    - [11.3.2 Disordered atoms](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec206)
+    - [11.3.3 Disordered residues](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec207)
+  - 11.4 Hetero residues
+    - [11.4.1 Associated problems](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec211)
+    - [11.4.2 Water residues](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec212)
+    - [11.4.3 Other hetero residues](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec213)
+  - [11.5 Navigating through a Structure object](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec214)
+  - 11.6 Analyzing structures
+    - [11.6.1 Measuring distances](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec226)
+    - [11.6.2 Measuring angles](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec227)
+    - [11.6.3 Measuring torsion angles](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec228)
+    - [11.6.4 Internal coordinates module - distances, angles, torsion angles, distance plots and more](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec229)
+    - [11.6.5 Determining atom-atom contacts](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec240)
+    - [11.6.6 Superimposing two structures](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec241)
+    - [11.6.7 Mapping the residues of two related structures onto each other](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec242)
+    - [11.6.8 Calculating the Half Sphere Exposure](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec243)
+    - [11.6.9 Determining the secondary structure](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec244)
+    - [11.6.10 Calculating the residue depth](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec245)
+  - 11.7 Common problems in PDB files
+    - [11.7.1 Examples](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec247)
+    - [11.7.2 Automatic correction](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec250)
+    - [11.7.3 Fatal errors](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec253)
+  - 11.8 Accessing the Protein Data Bank
+    - [11.8.1 Downloading structures from the Protein Data Bank](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec257)
+    - [11.8.2 Downloading the entire PDB](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec258)
+    - [11.8.3 Keeping a local copy of the PDB up to date](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec259)
+  - 11.9 General questions
+    - [11.9.1 How well tested is Bio.PDB?](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec261)
+    - [11.9.2 How fast is it?](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec262)
+    - [11.9.3 Is there support for molecular graphics?](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec263)
+    - [11.9.4 Who’s using Bio.PDB?](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec264)
+- Chapter ‍12 Bio.PopGen: Population genetics
+  - [12.1 GenePop](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec266)
+- Chapter ‍13 Phylogenetics with Bio.Phylo
+  - 13.1 Demo: What’s in a Tree?
+    - [13.1.1 Coloring branches within a tree](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec269)
+  - [13.2 I/O functions](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec270)
+  - [13.3 View and export trees](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec271)
+  - 13.4 Using Tree and Clade objects
+    - [13.4.1 Search and traversal methods](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec273)
+    - [13.4.2 Information methods](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec274)
+    - [13.4.3 Modification methods](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec275)
+    - [13.4.4 Features of PhyloXML trees](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec276)
+  - [13.5 Running external applications](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec277)
+  - [13.6 PAML integration](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec278)
+  - [13.7 Future plans](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec279)
+- Chapter ‍14 Sequence motif analysis using Bio.motifs
+  - 14.1 Motif objects
+    - [14.1.1 Creating a motif from instances](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec282)
+    - [14.1.2 Creating a sequence logo](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec283)
+  - 14.2 Reading motifs
+    - [14.2.1 JASPAR](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec285)
+    - [14.2.2 MEME](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec291)
+    - [14.2.3 TRANSFAC](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec293)
+  - [14.3 Writing motifs](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec294)
+  - [14.4 Position-Weight Matrices](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec295)
+  - [14.5 Position-Specific Scoring Matrices](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec296)
+  - 14.6 Searching for instances
+    - [14.6.1 Searching for exact matches](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec298)
+    - [14.6.2 Searching for matches using the PSSM score](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec299)
+    - [14.6.3 Selecting a score threshold](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec300)
+  - [14.7 Each motif object has an associated Position-Specific Scoring Matrix](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec301)
+  - [14.8 Comparing motifs](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec302)
+  - 14.9 *De novo* motif finding
+    - [14.9.1 MEME](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec304)
+  - [14.10 Useful links](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec305)
+- Chapter ‍15 Cluster analysis
+  - [15.1 Distance functions](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec310)
+  - [15.2 Calculating cluster properties](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec321)
+  - [15.3 Partitioning algorithms](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec324)
+  - [15.4 Hierarchical clustering](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec327)
+  - [15.5 Self-Organizing Maps](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec330)
+  - [15.6 Principal Component Analysis](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec331)
+  - [15.7 Handling Cluster/TreeView-type files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec332)
+  - [15.8 Example calculation](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec340)
+- Chapter ‍16 Supervised learning methods
+  - 16.1 The Logistic Regression Model
+    - [16.1.1 Background and Purpose](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec343)
+    - [16.1.2 Training the logistic regression model](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec344)
+    - [16.1.3 Using the logistic regression model for classification](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec345)
+    - [16.1.4 Logistic Regression, Linear Discriminant Analysis, and Support Vector Machines](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec346)
+  - 16.2 *k*-Nearest Neighbors
+    - [16.2.1 Background and purpose](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec348)
+    - [16.2.2 Initializing a *k*-nearest neighbors model](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec349)
+    - [16.2.3 Using a *k*-nearest neighbors model for classification](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec350)
+  - [16.3 Naïve Bayes](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec351)
+  - [16.4 Maximum Entropy](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec352)
+  - [16.5 Markov Models](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec353)
+- Chapter ‍17 Graphics including GenomeDiagram
+  - 17.1 GenomeDiagram
+    - [17.1.1 Introduction](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec356)
+    - [17.1.2 Diagrams, tracks, feature-sets and features](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec357)
+    - [17.1.3 A top down example](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec358)
+    - [17.1.4 A bottom up example](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec359)
+    - [17.1.5 Features without a SeqFeature](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec360)
+    - [17.1.6 Feature captions](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec361)
+    - [17.1.7 Feature sigils](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec362)
+    - [17.1.8 Arrow sigils](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec363)
+    - [17.1.9 A nice example](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec364)
+    - [17.1.10 Multiple tracks](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec365)
+    - [17.1.11 Cross-Links between tracks](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec366)
+    - [17.1.12 Further options](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec367)
+    - [17.1.13 Converting old code](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec368)
+  - 17.2 Chromosomes
+    - [17.2.1 Simple Chromosomes](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec370)
+    - [17.2.2 Annotated Chromosomes](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec371)
+- Chapter ‍18 KEGG
+  - [18.1 Parsing KEGG records](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec373)
+  - [18.2 Querying the KEGG API](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec374)
+- Chapter ‍19 Bio.phenotype: analyze phenotypic data
+  - 19.1 Phenotype Microarrays
+    - [19.1.1 Parsing Phenotype Microarray data](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec377)
+    - [19.1.2 Manipulating Phenotype Microarray data](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec378)
+    - [19.1.3 Writing Phenotype Microarray data](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec383)
+- Chapter ‍20 Cookbook – Cool things to do with it
+  - 20.1 Working with sequence files
+    - [20.1.1 Filtering a sequence file](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec386)
+    - [20.1.2 Producing randomized genomes](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec387)
+    - [20.1.3 Translating a FASTA file of CDS entries](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec388)
+    - [20.1.4 Making the sequences in a FASTA file upper case](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec389)
+    - [20.1.5 Sorting a sequence file](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec390)
+    - [20.1.6 Simple quality filtering for FASTQ files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec391)
+    - [20.1.7 Trimming off primer sequences](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec392)
+    - [20.1.8 Trimming off adaptor sequences](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec393)
+    - [20.1.9 Converting FASTQ files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec394)
+    - [20.1.10 Converting FASTA and QUAL files into FASTQ files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec395)
+    - [20.1.11 Indexing a FASTQ file](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec396)
+    - [20.1.12 Converting SFF files](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec397)
+    - [20.1.13 Identifying open reading frames](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec398)
+  - 20.2 Sequence parsing plus simple plots
+    - [20.2.1 Histogram of sequence lengths](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec400)
+    - [20.2.2 Plot of sequence GC%](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec401)
+    - [20.2.3 Nucleotide dot plots](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec402)
+    - [20.2.4 Plotting the quality scores of sequencing read data](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec403)
+  - 20.3 Dealing with alignments
+    - [20.3.1 Calculating summary information](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec405)
+    - [20.3.2 Calculating a quick consensus sequence](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec406)
+    - [20.3.3 Position Specific Score Matrices](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec407)
+    - [20.3.4 Information Content](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec408)
+  - 20.4 Substitution Matrices
+    - [20.4.1 Using common substitution matrices](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec410)
+    - [20.4.2 Calculating a substitution matrix from a multiple sequence alignment](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec411)
+  - [20.5 BioSQL – storing sequences in a relational database](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec412)
+- Chapter ‍21 The Biopython testing framework
+  - 21.1 Running the tests
+    - [21.1.1 Running the tests using Tox](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec415)
+  - 21.2 Writing tests
+    - [21.2.1 Writing a test using unittest](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec417)
+  - [21.3 Writing doctests](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec418)
+  - [21.4 Writing doctests in the Tutorial](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec419)
+- Chapter ‍22 Where to go from here – contributing to Biopython
+  - [22.1 Bug Reports + Feature Requests](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec421)
+  - [22.2 Mailing lists and helping newcomers](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec422)
+  - [22.3 Contributing Documentation](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec423)
+  - [22.4 Contributing cookbook examples](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec424)
+  - [22.5 Maintaining a distribution for a platform](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec425)
+  - [22.6 Contributing Unit Tests](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec426)
+  - [22.7 Contributing Code](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec427)
+- Chapter ‍23 Appendix: Useful stuff about Python
+  - 23.1 What the heck is a handle?
+    - [23.1.1 Creating a handle from a string](http://biopython.org/DIST/docs/tutorial/Tutorial.html#sec430)
