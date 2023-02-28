@@ -8,14 +8,14 @@
 
 ## 目录
 
-[第1章：简介](chapter/ch01.md)
+[第一章 简介](chapter/ch01.md)
 
 - 1.1 什么是Biopython？
 - 1.2 我能在 Biopython 包中找到什么
 - 1.3 安装Biopython
 - 1.4 常见问题（FAQ）
 
-[第2章：快速入门——你能用Biopython做什么？](chapter/ch02.md)
+[第二章 快速入门——你能用Biopython做什么？](chapter/ch02.md)
 
 - 2.1 Biopython 简介
 - 2.2 处理序列
@@ -27,7 +27,7 @@
 - 2.5 与生物数据库连接
 - 2.6 下一步做什么
 
-[第3章：序列对象](chapter/ch03.md)
+[第三章 序列对象](chapter/ch03.md)
 
 - 3.1 序列就像字符串一样
 - 3.2 序列提取
@@ -44,7 +44,7 @@
 - 3.13 MutableSeq 对象
 - 3.14 直接使用字符串
 
-[第4章：序列注释对象](chapter/ch04.md)
+[第四章 序列注释对象](chapter/ch04.md)
 
 - 4.1 SeqRecord对象
 - 4.2 创建SeqRecord
@@ -62,7 +62,7 @@
 - 4.8 添加 SeqRecord 对象
 - 4.9  SeqRecord 对象中的反向补充序列
 
-[第5章：序列输入/输出](chapter/ch05.md)
+[第五章 序列输入/输出](chapter/ch05.md)
 
 - 5.1 解析或读取序列
   - 5.1.1 读取序列文件
@@ -87,7 +87,7 @@
   - 5.5.4 将 SeqRecord 对象转换为格式化字符串
 - 5.6 低级 FASTA 和 FASTQ 解析器
 
-第6章：多序列比对对象
+[第六章 多序列比对对象](ch06.md)
 
 - 6.1 解析或读取序列比对结果
   - 6.1.1 单比对
@@ -128,7 +128,7 @@
 
 - 6.8 使用 pairwise2 进行成对比对
 
-[第7章：BLAST](chapter/ch07.md)
+[第七章 BLAST](chapter/ch07.md)
 
 - 7.1 在线运行 BLAST
 - 7.2 本地运行 BLAST
@@ -140,7 +140,7 @@
 - 7.5 处理 PSI-BLAST结果
 - 7.6 处理 RPS-BLAST结果
 
-[第8章：BLAST和其他序列搜索工具](chapter/ch08.md)
+[第八章 BLAST和其他序列搜索工具](chapter/ch08.md)
 
 - 8.1 SearchIO 对象模型
   - 8.1.1 QueryResult
@@ -152,7 +152,7 @@
 - 8.4 使用索引处理大型搜索输出文件
 - 8.5 输出和转换搜索输出文件
 
-[第 9 章：访问 NCBI 的 Entrez 数据库](chapter/ch09.md)
+[第九章 访问 NCBI 的 Entrez 数据库](chapter/ch09.md)
 
 - 9.1 Entrez指南
 - 9.2 EInfo：获取关于 Entrez 数据库的信息
@@ -181,7 +181,7 @@
   - 9.16.2 使用历史搜索和下载摘要
   - 9.16.3 搜索引文
 
-[第十章：Swiss-Prot 和 ExPASy](chapter/ch10.md)
+[第十章 Swiss-Prot 和 ExPASy](chapter/ch10.md)
 
 - 10.1 解析 Swiss-Prot 文件
   - 10.1.1 解析 Swiss-Prot 记录
@@ -195,7 +195,7 @@
   - 10.5.3 检索 Prosite 和 Prosite 文档记录
 - 10.6 扫描 Prosite 数据库
 
-[第 11 章：3D：PDB 模块](chapter/ch11.md)
+[第十一章 3D：PDB 模块](chapter/ch11.md)
 
 - 11.1 读写晶体结构文件
   - 11.1.1 读取 mmCIF 文件
@@ -248,11 +248,11 @@
   - 11.9.3 是否支持分子图形？
   - 11.9.4 谁在使用 Bio.PDB？
 
-[第12章 Bio.PopGen：种群遗传学](chapter/ch12.md)
+[第十二章 Bio.PopGen：种群遗传学](chapter/ch12.md)
 
 * 12.1 GenePop
 
-[第十三章：Bio.Phylo 的系统发育学](chapter/ch13.md)
+[第十三章 Bio.Phylo 的系统发育学](chapter/ch13.md)
 
 - 13.1 演示：树上有什么？
   - 13.1.1 为树中的分支着色
@@ -267,7 +267,7 @@
 - 13.6 PAML 集成
 - 13.7 未来计划
 
-[第14章：使用 Bio.motifs 进行序列基序分析](chapter/ch14.md)
+[第十四章 使用 Bio.motifs 进行序列motif分析](chapter/ch14.md)
 
 - 14.1 Motif 对象
   - 14.1.1 从实例创建motif
@@ -289,7 +289,7 @@
   - 14.9.1 MEME
 - 14.10 有用的链接
 
-[第十五章：聚类分析](chapter/ch15.md)
+[第十五章 聚类分析](chapter/ch15.md)
 
 - 15.1 距离函数
 - 15.2 计算簇/聚类属性
@@ -300,7 +300,7 @@
 - 15.7 处理 Cluster/TreeView 类文件
 - 15.8 计算示例
 
-[第十六章：监督学习方法](chapter/16.md)
+[第十六章 监督学习方法](chapter/16.md)
 
 - 16.1 逻辑回归模型
   - 16.1.1 背景和目的
@@ -315,7 +315,7 @@
 - 16.4 最大熵
 - 16.5 马尔可夫模型
 
-[第17章：使用GenomeDiagram可视化基因组区域](chapter/ch07.md)
+[第十七章 使用GenomeDiagram可视化基因组区域](chapter/ch07.md)
 
 - 17.1 基因组图
   - 17.1.1 简介
@@ -335,19 +335,19 @@
   - 17.2.1 简单染色体
   - 17.2.2 带注释的染色体
 
-[第18章：KEGG](chapter/ch18.md)
+[第十八章 KEGG](chapter/ch18.md)
 
 - 18.1 解析 KEGG 记录
 - 18.2 查询 KEGG API
 
-[第19章 Bio.phenotype：分析表型数据]()
+[第十九章 Bio.phenotype：分析表型数据](ch19.md)
 
 - 19.1 表型芯片
   - 19.1.1 解析表型芯片数据
   - 19.1.2 处理表型芯片数据
   - 19.1.3 输出表型芯片数据
 
-[第20章 Cookbook – 用它做很酷的事情](chapter/ch20.md)
+[第二十章 Cookbook – 用它做很酷的事情](chapter/ch20.md)
 
 - 20.1 使用序列文件
   - 20.1.1 过滤序列文件
@@ -378,7 +378,7 @@
   - 20.4.2 从多序列比对计算替换矩阵
 - 20.5 BioSQL——在关系数据库中存储序列
 
-[第21章 Biopython测试框架](chapter/ch21.md)
+[第二十一章 Biopython测试框架](chapter/ch21.md)
 
 - 21.1 运行测试
   - 21.1.1 使用 Tox 运行测试
@@ -387,7 +387,7 @@
 - 21.3 写入doctests
 - 21.4 在教程中写入 doctests
 
-[第22章 从这里去哪里——为Biopython做贡献](chapter/ch22.md)
+[第二十二章 从这里去哪里——为Biopython做贡献](chapter/ch22.md)
 
 - 22.1 错误报告 + 功能请求
 - 22.2 邮件列表和帮助新人
@@ -397,7 +397,7 @@
 - 22.6 贡献单元测试
 - 22.7 贡献代码
 
-[第23章 附录：关于Python的有用的东西](chapter/ch23.md)
+[第二十三章 附录：关于Python的有用的东西](chapter/ch23.md)
 
 - 23.1 句柄是什么？
 - 23.1.1 从字符串创建句柄
