@@ -31,18 +31,18 @@ Biopython 1.81在线版本：https://bioinformatics-cn.gitbook.io/biopython-tuto
   - [x] 翻译录入
   - [x] 格式整理
   - [x] 翻译校对
-- [ ] chapter05
+- [x] chapter05
   - [x] 翻译录入
-  - [ ] 格式整理
-  - [ ] 翻译校对
+  - [x] 格式整理
+  - [x] 翻译校对
 - [ ] chapter06
   - [x] 翻译录入
   - [ ] 格式整理
   - [ ] 翻译校对
-- [ ] chapter07
+- [x] chapter07
   - [x] 翻译录入
-  - [ ] 格式整理
-  - [ ] 翻译校对
+  - [x] 格式整理
+  - [x] 翻译校对
 - [ ] chapter08
   - [x] 翻译录入
   - [ ] 格式整理
