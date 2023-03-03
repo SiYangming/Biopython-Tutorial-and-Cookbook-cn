@@ -51,10 +51,10 @@ Biopython 1.81在线版本：https://bioinformatics-cn.gitbook.io/biopython-tuto
   - [x] 翻译录入
   - [ ] 格式整理
   - [ ] 翻译校对
-- [ ] chapter10
+- [x] chapter10
   - [x] 翻译录入
-  - [ ] 格式整理
-  - [ ] 翻译校对
+  - [x] 格式整理
+  - [x] 翻译校对
 - [ ] chapter11
   - [x] 翻译录入
   - [ ] 格式整理
