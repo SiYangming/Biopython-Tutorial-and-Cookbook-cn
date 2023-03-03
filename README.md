@@ -15,22 +15,22 @@ Biopython 1.81在线版本：https://bioinformatics-cn.gitbook.io/biopython-tuto
 
 ## 文档进程
 
-- [ ] chapter01
+- [x] chapter01
   - [x] 翻译录入
   - [x] 格式整理
-  - [ ] 翻译校对
-- [ ] chapter02
+  - [x] 翻译校对
+- [x] chapter02
   - [x] 翻译录入
   - [x] 格式整理
-  - [ ] 翻译校对
-- [ ] chapter03
+  - [x] 翻译校对
+- [x] chapter03
   - [x] 翻译录入
-  - [ ] 格式整理
-  - [ ] 翻译校对
-- [ ] chapter04
+  - [x] 格式整理
+  - [x] 翻译校对
+- [x] chapter04
   - [x] 翻译录入
-  - [ ] 格式整理
-  - [ ] 翻译校对
+  - [x] 格式整理
+  - [x] 翻译校对
 - [ ] chapter05
   - [x] 翻译录入
   - [ ] 格式整理
@@ -83,14 +83,14 @@ Biopython 1.81在线版本：https://bioinformatics-cn.gitbook.io/biopython-tuto
   - [x] 翻译录入
   - [ ] 格式整理
   - [ ] 翻译校对
-- [ ] chapter18
+- [x] chapter18
   - [x] 翻译录入
-  - [ ] 格式整理
-  - [ ] 翻译校对
-- [ ] chapter19
+  - [x] 格式整理
+  - [x] 翻译校对
+- [x] chapter19
   - [x] 翻译录入
-  - [ ] 格式整理
-  - [ ] 翻译校对
+  - [x] 格式整理
+  - [x] 翻译校对
 - [ ] chapter20
   - [x] 翻译录入
   - [ ] 格式整理
